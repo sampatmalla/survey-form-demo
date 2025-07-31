@@ -388,8 +388,8 @@ const BarcodeScanner = ({
   console.log("BUG1 mode:", mode);
   console.log("BUG1 imgSrc:", imgSrc);
 
-  const openCamera = (e) => {
-    e.preventDefault();
+  const openCamera = () => {
+    // e.preventDefault();
     // setImgSrc(null);
     setBarcodesResponseError("");
     fileInputRef.current.click();
@@ -513,6 +513,7 @@ const BarcodeScanner = ({
   };
 
   const handleUpload = async (useCropped) => {
+    setBarcodeUploading(true);
     try {
       const formData = new FormData();
 
@@ -539,7 +540,6 @@ const BarcodeScanner = ({
       }
 
       console.log("Barcode formData:", formData);
-      setBarcodeUploading(true);
 
       const response = await axios.post(
         "https://onehub-python-test-new-dot-onehub-namer-app.uc.r.appspot.com/scan",
@@ -1004,7 +1004,10 @@ const BarcodeScanner = ({
 
       {mode === "crop" && (
         <div className="w-full max-w-md bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="relative p-2">
+          <div
+            className="relative p-2"
+            onContextMenu={(e) => e.preventDefault()}
+          >
             <ReactCrop
               crop={crop}
               onChange={setCrop}
