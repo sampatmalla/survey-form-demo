@@ -685,7 +685,7 @@ const BarcodeScanner = ({
             onClick={openCamera}
           >
             <BiBarcodeReader className="w-4 h-4 text-sm sm:text-base" />
-            <span className="text-sm sm:text-base">Scan Barcode1</span>
+            <span className="text-sm sm:text-base">Scan Barcode</span>
           </button>
 
           {isLaptopOrLarger ? (
@@ -1029,14 +1029,14 @@ const BarcodeScanner = ({
             <button
               type="button"
               onClick={() => setMode("cropped")}
-              className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded w-full"
+              className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded w-full select-none"
             >
               Cancel
             </button>
             <button
               type="button"
               onClick={generateCroppedPreview}
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full"
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full select-none"
             >
               Done
             </button>
