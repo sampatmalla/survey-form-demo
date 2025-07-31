@@ -685,7 +685,7 @@ const BarcodeScanner = ({
             onClick={openCamera}
           >
             <BiBarcodeReader className="w-4 h-4 text-sm sm:text-base" />
-            <span className="text-sm sm:text-base">Scan Barcode</span>
+            <span className="text-sm sm:text-base">Scan Barcode1</span>
           </button>
 
           {isLaptopOrLarger ? (
