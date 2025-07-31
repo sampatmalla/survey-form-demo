@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('/fonts/GoogleSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@import "tailwindcss";
+
+@theme { 
+    --font-googleSans : 'GoogleSans', sans-serif;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 10s linear infinite;
+    animation-delay: 1s;
+    white-space: nowrap;
+    display: inline-block;
+    padding-right: 50px;
+    /* Creates space before text repeats */ }
